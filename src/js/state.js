@@ -32,7 +32,7 @@ const changeStateByValue = (prop) => {
 }
 
 //closures
-export const initialSize = changeStateToValue("size")(50);
+export const initialSize = changeStateToValue("size")(60);
 export const makeRed = changeStateToValue("color")("red");
 export const makeBlue = changeStateToValue("color")("blue");
 export const growSlime = changeStateByValue("size")(20);

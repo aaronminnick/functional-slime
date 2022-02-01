@@ -20,6 +20,32 @@ body {
   background-color: blue;
   border-radius: 50% 50% 15% 15%;
   border: 5px whitesmoke solid;
+
+  display: flex;
+  justify-content: center;
+}
+
+.eye {
+  transition: 
+  height .5s ease-in, 
+  width .4s ease-in;
+
+  position: relative;
+  display: inline flex;
+  top: 20%;
+  background-color: white;
+  height: calc(var(--height) * .3);
+  width: calc(var(--height) * .2);
+}
+
+#left-eye {
+  right: calc(var(--height) * .1);
+  border-radius: 50% 50% 40% 50%;
+}
+
+#right-eye {
+  left: calc(var(--height) * .1);
+  border-radius: 50% 50% 50% 40%;
 }
 
 #interaction-tray {
