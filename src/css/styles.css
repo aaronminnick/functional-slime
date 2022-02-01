@@ -1,3 +1,21 @@
-#state-div {
+body {
+  background-color: rgb(27, 34, 34);
+}
+
+#slime-div {
+  --height: 50px;
+  --width: calc(var(--height) * 1.25);
+  height: var(--height);
+  width: var(--width);
   background-color: blue;
+  margin-top: calc(50vh - var(--height)/2);
+  margin-left: calc(50% - var(--width)/2);
+  border-radius: 50% 50% 15% 15%;
+  border: 5px whitesmoke solid;
+}
+
+#interaction-tray {
+  position: absolute;
+  bottom: 20vh;
+  left: 40vw;
 }

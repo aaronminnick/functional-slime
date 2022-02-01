@@ -22,6 +22,18 @@ const changeState = (prop) => {
   }
 }
 
+const changeStateByValue = (prop) => {
+  return (value) => {
+    return (state) => ({
+      ...state, 
+      [prop]: (state[prop] || 0) + value
+    })
+  }
+}
+
 //example of function use
+export const initialSize = changeState("size")(50);
 export const makeRed = changeState("color")("red");
 export const makeBlue = changeState("color")("blue");
+export const growSlime = changeStateByValue("size")(20);
+export const shrinkSlime = changeStateByValue("size")(-20);
