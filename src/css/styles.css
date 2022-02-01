@@ -5,11 +5,19 @@ body {
 #slime-div {
   --height: 50px;
   --width: calc(var(--height) * 1.25);
+  
+  transition: 
+  height .5s ease-in, 
+  margin-top .5s ease-out, 
+  width .4s ease-in, 
+  margin-left .4s ease-out,
+  background-color .5s;
+  
   height: var(--height);
   width: var(--width);
-  background-color: blue;
   margin-top: calc(50vh - var(--height)/2);
   margin-left: calc(50% - var(--width)/2);
+  background-color: blue;
   border-radius: 50% 50% 15% 15%;
   border: 5px whitesmoke solid;
 }

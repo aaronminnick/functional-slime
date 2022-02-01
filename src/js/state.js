@@ -13,7 +13,7 @@ const storeState = () => {
 export const stateControl = storeState();
 
 //curried
-const changeState = (prop) => {
+const changeStateToValue = (prop) => {
   return (value) => {
     return (state) => ({
       ...state, 
@@ -31,9 +31,9 @@ const changeStateByValue = (prop) => {
   }
 }
 
-//example of function use
-export const initialSize = changeState("size")(50);
-export const makeRed = changeState("color")("red");
-export const makeBlue = changeState("color")("blue");
+//closures
+export const initialSize = changeStateToValue("size")(50);
+export const makeRed = changeStateToValue("color")("red");
+export const makeBlue = changeStateToValue("color")("blue");
 export const growSlime = changeStateByValue("size")(20);
 export const shrinkSlime = changeStateByValue("size")(-20);
