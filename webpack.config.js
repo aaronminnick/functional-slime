@@ -16,7 +16,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Plant Game',
+      title: 'slime',
       template: './src/index.html',
       inject: 'body'
     }),

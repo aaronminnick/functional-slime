@@ -5,7 +5,7 @@ import $ from 'jquery';
 import { stateControl, makeRed, makeBlue, growSlime, shrinkSlime, initialSize } from './js/state';
 
 $(() => {
-  $("#slime-div").css("--height", `${stateControl(initialSize).size}px`)
+  $("#slime-div").css("--height", `${stateControl(initialSize).size}px`);
 });
 
 $("#red-button").on("click", () => {
