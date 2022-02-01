@@ -1,36 +1,15 @@
-//function for storing state
-const storeState = () => {
-  let currentState = {};
-  //the arrow function state => state will allow the function to return present state if called with no arg
-  return (stateChangeFunction = state => state) => {
-    const newState = stateChangeFunction(currentState);
-    currentState = {...newState};
-    return newState;
-  }
-}
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./css/styles.css";
+import $ from 'jquery';
+import { stateControl, makeRed, makeBlue } from './js/state';
 
-//wrap in a new function to provide closure
-const stateControl = storeState();
+$("#red-button").on("click", () => {
+  $("#state-div").css("background-color", stateControl(makeRed).color);
+});
 
-//non-curried version
-const changeState = (state, prop, value) => {
-  return {
-    ...state,
-    [prop]: (state[prop] || 0) + value
-  }
-}
+$("#blue-button").on("click", () => {
+  $("#state-div").css("background-color", stateControl(makeBlue).color);
+});
 
-//curried
-const changeState = (prop) => {
-  return (value) => {
-    return (state) => ({
-      ...state, 
-      [prop]: (state[prop] || 0) + value
-    })
-  }
-}
-
-//example of function use
-const blueFood = changeState("soil")(5);
-
-stateControl(blueFood);
+//click a button which is caught by jquery, and invokes the funtion to change state - this adds a property to state which would contain a css instruction / class name - then we run another script to poll the state in order to add css class to the div
